@@ -1,1 +1,288 @@
-console.log("hii")
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Blog</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f5f0;
+            color: #064e3b;
+        }
+
+        .header {
+            background-image: url('https://images.pexels.com/photos/4827/nature-forest-industry-rails.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .rumi-quote {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #064e3b;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    }
+
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+            background-color: rgba(6, 78, 59, 0.8);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-family: 'Georgia', serif;
+        }
+
+        .latest-posts {
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .latest-posts h2 {
+            font-family: 'Georgia', serif;
+            color: #064e3b;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #064e3b;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .post {
+            margin: 15px auto;
+            max-width: 800px;
+            border: 2px solid #a7d7c5;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .post-content h3 {
+            font-family: 'Georgia', serif;
+        }
+
+        .post-content h3 a {
+            text-decoration: none;
+            color: #064e3b;
+        }
+
+        .post-content h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .contact {
+            padding: 20px;
+            background: #d7f3e4;
+            text-align: center;
+            border-top: 2px solid #a7d7c5;
+        }
+
+        .contact a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #064e3b;
+            font-weight: bold;
+        }
+
+        .contact p {
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+
+        .article-page {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: 2px solid #a7d7c5;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .article-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .article-header .author-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .article-header h1 {
+            margin: 0 0 5px;
+            color: #064e3b;
+            font-family: 'Georgia', serif;
+        }
+
+        .article-header .author-name {
+            font-size: 1rem;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            color: #064e3b;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .article-header .author-name img {
+            width: 16px;
+            height: 16px;
+            margin-left: 5px;
+        }
+
+        .article-content img {
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: #064e3b;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .post-content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Homepage -->
+    <div class="header">
+        <h1>بِسْمِ ٱللَّٰهِ</h1>
+
+
+    </div>
+    <p class="rumi-quote" id="rumi-quote">Loading quote...</p>
+    </div>
+
+    <script>
+        const rumiQuotes = [
+            "Don’t grieve. Anything you lose comes round in new form. ~ Rumi",
+            "Let yourself be silently drawn by the strange pull of what you really love. It will not lead you astray. ~ Rumi",
+            "You were born with wings, why prefer to crawl through life? ~ Rumi",
+            "Try not to resist the changes that come your way. Instead, embrace them, let life flow through you. ~ Rumi",
+            "The soul has been given its own ears to hear things the mind does not understand. ~ Rumi",
+            "Don't be satisfied with stories, how things have gone with others. Unfold your own myth. ~ Rumi",
+            "When the soul lies down in that grass, the world is too full to talk about ideas, language, even the phrase each other—no tracings of the self remain. ~ Rumi",
+            "Be like a tree and let the dead leaves drop. ~ Rumi",
+            "Let the beauty of what you love be what you do. ~ Rumi",
+            "The breeze at dawn has secrets to tell you. Don’t go back to sleep. ~ Rumi",
+            "Don’t wait any longer. Dive in the ocean, leave and let the sea be you. ~ Rumi",
+            "Out beyond ideas of wrongdoing and rightdoing, there is a field. I'll meet you there. ~ Rumi",
+            "You are not a drop in the ocean. You are the entire ocean in a drop. ~ Rumi",
+            "Silence is the language of God, all else is poor translation. ~ Rumi",
+            "Let yourself be silently drawn by the strange pull of what you really love. ~ Rumi",
+            "Wherever you are, and whatever you do, be in love. ~ Rumi",
+            "The wound is the place where the light enters you. ~ Rumi",
+            "Be like a flower, turn your face to the sun. ~ Rumi",
+            "If you are irritated by every rub, how will your mirror be polished? ~ Rumi",
+            "Everything that is made beautiful and fair and lovely is made for the eye of one who sees. ~ Rumi",
+            "When you let go of who you are, you become who you might be. ~ Rumi",
+            "Set your life on fire. Seek those who fan your flames. ~ Rumi",
+            "Don’t be satisfied with stories, how things have gone with others. Unfold your own myth. ~ Rumi",
+            "The moon stays bright when it doesn’t avoid the night. ~ Rumi",
+            "Live life as if everything is rigged in your favor. ~ Rumi",
+            "Be a lamp, or a lifeboat, or a ladder. ~ Rumi",
+            "You are a mirror of the entire universe. ~ Rumi",
+            "What you seek is seeking you. ~ Rumi",
+            "Try not to resist the changes that come your way. Instead, embrace them, let life flow through you. ~ Rumi",
+            "Don’t mourn. Anything you lose comes round in new form. ~ Rumi",
+            "Why are you so busy with this or that or good or bad; pay attention to how things blend. ~ Rumi",
+            "Why are you so busy with this or that or good or bad; pay attention to how things blend. ~ Rumi",
+            "Live in the nowhere that you came from, even though you have an address here. ~ Rumi",
+            "Try not to resist the changes that come your way. Instead, embrace them, let life flow through you. ~ Rumi",
+            "Don't grieve. Anything you lose comes round in new form. ~ Rumi",
+            "Your task is not to seek for love, but merely to seek and find all the barriers within yourself that you have built against it. ~ Rumi",
+            "Love is the bridge between you and everything. ~ Rumi",
+            "You were born with wings, why prefer to crawl through life? ~ Rumi",
+            "There is a voice that doesn't use words. Listen. ~ Rumi"
+        ];
+
+        // Function to get a random quote
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * rumiQuotes.length);
+            return rumiQuotes[randomIndex];
+        }
+
+        // Display a random quote
+        document.getElementById('rumi-quote').innerHTML = getRandomQuote();
+    </script>
+    <div class="latest-posts">
+        <h2>Latest Posts</h2>
+
+        <div class="post">
+            <img src="https://images.pexels.com/photos/158607/cairn-fog-mystical-background-158607.jpeg" alt="Post Thumbnail">
+            <div class="post-content">
+                <h3><a href="article1.html">How to Start Blogging</a></h3>
+                <p>Learn the basics of starting your own blog and sharing your thoughts with the world.</p>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="https://images.pexels.com/photos/1671325/pexels-photo-1671325.jpeg" alt="Post Thumbnail">
+            <div class="post-content">
+                <h3><a href="article2.html">Tips for Writing Great Articles</a></h3>
+                <p>Discover techniques to improve your writing and engage your readers.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact">
+        <p>Contact Me: <i style="font-size:24px" class="fa">&#xf0e0;</i> zayn123@duck.com</a> |
+            <a href="https://instagram.com/zimaamzayn">
+                <i style="font-size:24px" class="fa">&#xf16d;</i> Instagram</a> | <a href="https://t.me/zimaamzayn"><i style="font-size:24px" class="fa">&#xf2c6;</i> Telegram</a></p>
+    </div>
+</body>
+</html>
