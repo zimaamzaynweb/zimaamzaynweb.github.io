@@ -14,7 +14,25 @@
             font-family: 'Arial', sans-serif;
             background-color: #f0f5f0;
             color: #064e3b;
-        }
+        }.all-posts-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.all-posts-button a {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.all-posts-button a:hover {
+    background-color: #45a049;
+}
+
 
         .header {
             background-image: url('https://images.pexels.com/photos/4827/nature-forest-industry-rails.jpg');
@@ -298,16 +316,8 @@
                 <p>This is my first Post and I wanted to introduce myself to you guys a little bit.</p>
             </div>
         </div>
-        
-    <div class="chat-container">
-        <div class="chat-header">Zayn's AI</div>
-        <div class="chat-widget" id="chat-widget">
-            <div class="message bot-message">Hi, I'm Zayn's AI! Ask me anything.</div>
-        </div>
-        <div class="chat-footer">
-            <input type="text" id="user-input" placeholder="Type your question here..." onkeydown="checkEnter(event)">
-            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-        </div>
+        <div class="all-posts-button">
+    <a href="all.html">View All Posts</a>
     </div>
     </div>
 
