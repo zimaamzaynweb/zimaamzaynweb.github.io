@@ -5,6 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Disable text selection */
+        body {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+    <script>
+        // Disable Right Click
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+
+        // Disable Copy, Cut, and Paste
+        document.addEventListener("copy", function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener("cut", function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener("paste", function (e) {
+            e.preventDefault();
+        });
+
+        // Block Developer Tools (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+        document.addEventListener("keydown", function (e) {
+            if (
+                e.key === "F12" ||
+                (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+                (e.ctrlKey && e.key === "U")
+            ) {
+                e.preventDefault();
+            }
+        });
+
+        // Detect DevTools Open (Debugger Trick)
+        (function () {
+            function detectDevTools() {
+                if (window.outerWidth - window.innerWidth > 160 || window.outerHeight - window.innerHeight > 160) {
+                    console.clear();
+                    alert("Developer tools detected! Please close them.");
+                    window.location.reload(); // Refresh page
+                }
+            }
+            setInterval(detectDevTools, 1000);
+        })();
+
+        // Pause Execution in Debugger (Harder to Bypass)
+        function blockDebugger() {
+            setInterval(function () {
+                debugger;
+            }, 50);
+        }
+        blockDebugger();
+    </script>
+
     <title>Home - Zimaam Zayn</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
